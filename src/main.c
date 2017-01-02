@@ -1,6 +1,6 @@
 //
 //  main.c
-//  MNIST_ASCCI_Explorer
+//  MNIST_ASCII_Explorer
 //
 //  Created by Sebastian Valencia on 12/29/16.
 //
@@ -29,7 +29,7 @@ const int MNIST_LINE_SIZE = 28;
 const int MNIST_DATA_COUNT = 42000;
 
 /* Random coloring seed fot the ASCII CAPTCHA */
-const char ASCCI_colors[] = {'.', ',', ';', ':', '"', '\'', '`', '+', '*', '%', '#', '@'};
+const char ASCII_colors[] = {'.', ',', ';', ':', '"', '\'', '`', '+', '*', '%', '#', '@'};
 
 /* Predefined coloring constant */
 const char DOT = '*';
@@ -42,7 +42,7 @@ const char DOT = '*';
  * white, if true, means that the digits shuld be filled with space character, while
  * the surroudings must have other non-blank charcters; that depends on the variable 
  * dots, if this variable is true, those non-blank characters are going to be DOT, 
- * otherwise, random characters taken from ASCCI_colors.
+ * otherwise, random characters taken from ASCII_colors.
 */
 
 int min_digits, max_digits;
@@ -201,7 +201,7 @@ int randr(int min_num, int max_num) {
 
 char classify_brightness(int brightness) {
     char ans = ' ';
-    char random_fill = ASCCI_colors[randr(0, 10)];
+    char random_fill = ASCII_colors[randr(0, 10)];
 
     if(!white && !dots)
         ans = (brightness == 0) ? ' ' : random_fill;
@@ -335,7 +335,7 @@ void handle_args(int argc, char const *argv[]) {
     /* Is dots_arg -d or -r? */
     if(strcmp(dots_arg, "-d") != 0 && strcmp(dots_arg, "-r") != 0) {
         printf("Error: thirs args must be -d to fill non-white space with dots, ");
-        printf("or -r to fill it with random ASCCI characters\n");
+        printf("or -r to fill it with random ASCII characters\n");
         exit(1);
     } else
         dots = (strcmp(dots_arg, "-d") == 0);

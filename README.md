@@ -9,6 +9,8 @@ The challenge is to provide a solution to this problem (hack the MNIST based ASC
 
 The program consists of a single `C` file (`src/main.c`), and you are not suppose to modify it. The attacks must come from other programs (a bot that gives you the correct sequence. The only input the bot can receive by hand is the ASCII banner printed by `main.c`). A description of the program follows:
 
+To compile the program, just execute `make src/main`.
+
 `./main min max [-w | -b] [-d | -r]` receives four command line arguments. 
 
 1. The first pair (`min`, `max`) is the range for the selection of the length of the digits of the CAPTCHA. So the number of digits in the CAPTCHA can be any number between min and max inclusive.
