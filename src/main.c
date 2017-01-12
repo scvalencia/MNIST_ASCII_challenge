@@ -12,6 +12,9 @@
 #include <string.h>
 #include <stdbool.h>
 
+/* Total registers in the file */
+#define MNIST_DATA_COUNT 42000
+
 /* What's the minimum value from a and b */
 #define MIN(a, b) ((a) < (b)) ? (a) : (b)
 
@@ -24,9 +27,6 @@ const int PIXELS_COUNT = 784;
 
 /* The dimensions of the box */
 const int MNIST_LINE_SIZE = 28;
-
-/* Total registers in the file */
-const int MNIST_DATA_COUNT = 42000;
 
 /* Random coloring seed fot the ASCII CAPTCHA */
 const char ASCII_colors[] = {'.', ',', ';', ':', '"', '\'', '`', '+', '*', '%', '#', '@'};
